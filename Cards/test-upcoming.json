@@ -1,0 +1,84 @@
+﻿{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "horizontalAlignment": "Center",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "text": "Επερχόμενα διαγωνίσματα"
+        },
+        {
+          "type": "TextBlock",
+          "horizontalAlignment": "Center",
+          "size": "Large",
+          "weight": "Bolder",
+          "text": "{course}"
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "separator": true,
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "Left",
+              "weight": "Bolder",
+              "text": "05/06/2019"
+            }
+          ],
+          "width": "stretch"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "- Κεφάλαιο 1\n- Λυμένες 1-3\n- Ενότητες 1, 2, 4",
+              "wrap": true
+            }
+          ],
+          "width": "stretch"
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "separator": true,
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "Left",
+              "weight": "Bolder",
+              "text": "10/06/2019"
+            }
+          ],
+          "width": "stretch"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "text": "DNA, Ευκαρυωτικά κύτταρα",
+              "wrap": true
+            }
+          ],
+          "width": "stretch"
+        }
+      ]
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0"
+}

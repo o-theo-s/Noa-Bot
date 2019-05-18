@@ -1,0 +1,72 @@
+﻿{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "horizontalAlignment": "Center",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "text": "{course}"
+        },
+        {
+          "type": "TextBlock",
+          "horizontalAlignment": "Center",
+          "size": "Large",
+          "weight": "Bolder",
+          "text": "{help_mode}",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "horizontalAlignment": "Center",
+          "size": "Medium",
+          "weight": "Bolder",
+          "text": "{chapter}",
+          "wrap": true
+        },
+        {
+          "type": "TextBlock",
+          "separator": true,
+          "weight": "Bolder",
+          "text": "Επίλεξε αριθμό άσκησης:",
+          "isSubtle": true
+        }
+      ]
+    },
+    {
+      "type": "Input.Number",
+      "id": "Exercise",
+      "value":  "1",
+      "placeholder": "Άσκηση"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Βοήθεια",
+      "data": {
+        "CardInfo": {
+          "Card": "course-exercises",
+          "Action": "Βοήθεια",
+          "ChildCards": []
+        }
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Μεθοδολογία",
+      "data": {
+        "CardInfo": {
+          "Card": "course-exercises",
+          "Action": "Μεθοδολογία",
+          "ChildCards": []
+        }
+      }
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0"
+}

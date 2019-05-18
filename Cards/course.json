@@ -1,0 +1,117 @@
+﻿{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "horizontalAlignment": "Center",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "text": "{course}"
+        },
+        {
+          "type": "FactSet",
+          "separator": true,
+          "facts": [
+            {
+              "title": "Τελευταίο μάθημα:",
+              "value": "Εισαγωγή"
+            },
+            {
+              "title": "Επόμενο μάθημα:",
+              "value": "Ασκήσεις"
+            },
+            {
+              "title": "Ημερομηνία:",
+              "value": "03/06/2019"
+            }
+          ]
+        },
+        {
+          "type": "TextBlock",
+          "separator": true,
+          "weight": "Bolder",
+          "text": "Επίλεξε κεφάλαιο και κατηγορία:",
+          "isSubtle": true
+        },
+        {
+          "type": "Input.ChoiceSet",
+          "id": "Chapter",
+          "value": "1. Από το κύτταρο στον οργανισμό",
+          "choices": [
+            {
+              "title": "1. Από το κύτταρο στον οργανισμό",
+              "value": "1. Από το κύτταρο στον οργανισμό"
+            },
+            {
+              "title": "2. Πεπτικό σύστημα",
+              "value": "2. Πεπτικό σύστημα"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Θεωρία",
+      "data": {
+        "CardInfo": {
+          "Card": "courses",
+          "Action": "Θεωρία",
+          "ChildCards": []
+        }
+      }
+    },
+    {
+      "type": "Action.ShowCard",
+      "title": "Ασκήσεις",
+      "card": {
+        "type": "AdaptiveCard",
+        "style": "emphasis",
+        "body": [
+          {
+            "type": "TextBlock",
+            "weight": "Bolder",
+            "text": "Επίλεξε τύπο ασκήσεων:",
+            "isSubtle": true
+          }
+        ],
+        "actions": [
+          {
+            "type": "Action.Submit",
+            "title": "Λυμένες",
+            "data": {
+              "CardInfo": {
+                "Card": "courses",
+                "Action": "Λυμένες",
+                "ChildCards": [
+                  "Ασκήσεις"
+                ]
+              }
+            }
+          },
+          {
+            "type": "Action.Submit",
+            "title": "Άλυτες",
+            "data": {
+              "CardInfo": {
+                "Card": "courses",
+                "Action": "Άλυτες",
+                "ChildCards": [
+                  "Ασκήσεις"
+                ]
+              }
+            }
+          }
+        ],
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+      }
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0"
+}

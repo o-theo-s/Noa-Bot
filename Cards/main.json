@@ -1,0 +1,369 @@
+﻿{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "Image",
+          "horizontalAlignment": "Center",
+          "url": "https://noabot.azurewebsites.net/assets/poukamisas.png"
+        },
+        {
+          "type": "TextBlock",
+          "horizontalAlignment": "Center",
+          "spacing": "Small",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "text": "Αρχική"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "horizontalAlignment": "Center",
+      "spacing": "None",
+      "size": "Large",
+      "weight": "Bolder",
+      "text": "Σε τι θα μπορούσα να σε βοηθήσω;"
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.ShowCard",
+      "title": "Μαθήματα",
+      "card": {
+        "type": "AdaptiveCard",
+        "style": "emphasis",
+        "body": [
+          {
+            "type": "TextBlock",
+            "weight": "Bolder",
+            "text": "Τα μαθήματά σου:",
+            "isSubtle": true
+          },
+          {
+            "type": "Input.ChoiceSet",
+            "id": "Course",
+            "value": "Βιολογία",
+            "choices": [
+              {
+                "title": "Βιολογία",
+                "value": "Βιολογία"
+              },
+              {
+                "title": "Έκθεση",
+                "value": "Έκθεση"
+              },
+              {
+                "title": "Φυσική",
+                "value": "Φυσική"
+              }
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "type": "Action.Submit",
+            "title": "Επιλογή",
+            "data": {
+              "CardInfo": {
+                "Card": "main",
+                "Action": "Επιλογή",
+                "ChildCards": [
+                  "Μαθήματα"
+                ]
+              }
+            }
+          }
+        ],
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+      }
+    },
+    {
+      "type": "Action.ShowCard",
+      "title": "Πρόγραμμα",
+      "card": {
+        "type": "AdaptiveCard",
+        "style": "emphasis",
+        "body": [
+          {
+            "type": "TextBlock",
+            "horizontalAlignment": "Center",
+            "separator": true,
+            "size": "Large",
+            "text": "{schedule_date}",
+            "isSubtle": true
+          },
+          {
+            "type": "ColumnSet",
+            "columns": [
+              {
+                "type": "Column",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "horizontalAlignment": "Center",
+                    "weight": "Bolder",
+                    "text": "16:00 - 18:00"
+                  }
+                ],
+                "width": "stretch"
+              },
+              {
+                "type": "Column",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "horizontalAlignment": "Center",
+                    "weight": "Bolder",
+                    "text": "Φυσική",
+                    "isSubtle": true
+                  }
+                ],
+                "width": "stretch"
+              }
+            ]
+          },
+          {
+            "type": "ColumnSet",
+            "columns": [
+              {
+                "type": "Column",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "horizontalAlignment": "Center",
+                    "weight": "Bolder",
+                    "text": "18:00 - 19:00"
+                  }
+                ],
+                "width": "stretch"
+              },
+              {
+                "type": "Column",
+                "items": [
+                  {
+                    "type": "TextBlock",
+                    "horizontalAlignment": "Center",
+                    "weight": "Bolder",
+                    "text": "Έκθεση",
+                    "isSubtle": true
+                  }
+                ],
+                "width": "stretch"
+              }
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "type": "Action.Submit",
+            "title": "Εβδομαδιαίο",
+            "data": {
+              "CardInfo": {
+                "Card": "main",
+                "Action": "Εβδομαδιαίο",
+                "ChildCards": [
+                  "Πρόγραμμα"
+                ]
+              }
+            }
+          },
+          {
+            "type": "Action.ShowCard",
+            "title": "Άλλη ημέρα",
+            "card": {
+              "type": "AdaptiveCard",
+              "style": "emphasis",
+              "body": [
+                {
+                  "type": "TextBlock",
+                  "separator": true,
+                  "weight": "Bolder",
+                  "text": "Άλλη ημέρα:",
+                  "isSubtle": true
+                },
+                {
+                  "type": "Input.Date",
+                  "id": "ScheduleDate",
+                  "value": "{tomorrow}"
+                }
+              ],
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "title": "Προβολή",
+                  "data": {
+                    "CardInfo": {
+                      "Card": "main",
+                      "Action": "Προβολή",
+                      "ChildCards": [
+                        "Άλλη ημέρα",
+                        "Πρόγραμμα"
+                      ]
+                    }
+                  }
+                }
+              ],
+              "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+            }
+          }
+        ],
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+      }
+    },
+    {
+      "type": "Action.ShowCard",
+      "title": "Διαγωνίσματα",
+      "card": {
+        "type": "AdaptiveCard",
+        "style": "emphasis",
+        "body": [
+          {
+            "type": "FactSet",
+            "facts": [
+              {
+                "title": "Επόμενο διαγώνισμα:",
+                "value": "05/06/2019"
+              },
+              {
+                "title": "Μάθημα:",
+                "value": "Φυσική"
+              }
+            ]
+          },
+          {
+            "type": "FactSet",
+            "separator": true,
+            "facts": [
+              {
+                "title": "Τελευταίο διαγώνισμα:",
+                "value": "17/05/2019"
+              },
+              {
+                "title": "Μάθημα:",
+                "value": "Έκθεση"
+              },
+              {
+                "title": "Βαθμός",
+                "value": "19"
+              }
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "type": "Action.ShowCard",
+            "title": "Βαθμοί",
+            "card": {
+              "type": "AdaptiveCard",
+              "style": "emphasis",
+              "body": [
+                {
+                  "type": "TextBlock",
+                  "weight": "Bolder",
+                  "text": "Για ποιο μάθημα θα ήθελες να δεις το ιστορικό των γραπτών σου;",
+                  "isSubtle": true,
+                  "wrap": true
+                },
+                {
+                  "type": "Input.ChoiceSet",
+                  "id": "Course",
+                  "value": "Βιολογία",
+                  "choices": [
+                    {
+                      "title": "Βιολογία",
+                      "value": "Βιολογία"
+                    },
+                    {
+                      "title": "Έκθεση",
+                      "value": "Έκθεση"
+                    },
+                    {
+                      "title": "Φυσική",
+                      "value": "Φυσική"
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "title": "Προβολή",
+                  "data": {
+                    "CardInfo": {
+                      "Card": "main",
+                      "Action": "Προβολή",
+                      "ChildCards": [
+                        "Βαθμοί",
+                        "Διαγωνίσματα"
+                      ]
+                    }
+                  }
+                }
+              ],
+              "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+            }
+          },
+          {
+            "type": "Action.ShowCard",
+            "title": "Επερχόμενα",
+            "card": {
+              "type": "AdaptiveCard",
+              "style": "emphasis",
+              "body": [
+                {
+                  "type": "TextBlock",
+                  "weight": "Bolder",
+                  "text": "Για ποιο μάθημα θα ήθελες να δεις το πρόγραμμα των διαγωνισμάτων σου;",
+                  "isSubtle": true,
+                  "wrap": true
+                },
+                {
+                  "type": "Input.ChoiceSet",
+                  "id": "Course",
+                  "value": "Βιολογία",
+                  "choices": [
+                    {
+                      "title": "Βιολογία",
+                      "value": "Βιολογία"
+                    },
+                    {
+                      "title": "Έκθεση",
+                      "value": "Έκθεση"
+                    },
+                    {
+                      "title": "Φυσική",
+                      "value": "Φυσική"
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": "Action.Submit",
+                  "title": "Προβολή",
+                  "data": {
+                    "CardInfo": {
+                      "Card": "main",
+                      "Action": "Προβολή",
+                      "ChildCards": [
+                        "Επερχόμενα",
+                        "Διαγωνίσματα"
+                      ]
+                    }
+                  }
+                }
+              ],
+              "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+            }
+          }
+        ],
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+      }
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0"
+}

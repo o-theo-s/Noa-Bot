@@ -1,0 +1,137 @@
+﻿{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "horizontalAlignment": "Center",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "text": "Πρόγραμμα μαθημάτων"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "horizontalAlignment": "Center",
+      "separator": true,
+      "size": "Large",
+      "text": "{schedule_date}"
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "Center",
+              "weight": "Bolder",
+              "text": "16:00 - 18:00",
+              "wrap": true
+            }
+          ],
+          "width": "stretch"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "Center",
+              "weight": "Bolder",
+              "text": "Φυσική",
+              "isSubtle": true
+            }
+          ],
+          "width": "stretch"
+        }
+      ]
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "Center",
+              "weight": "Bolder",
+              "text": "18:00 - 19:00"
+            }
+          ],
+          "width": "stretch"
+        },
+        {
+          "type": "Column",
+          "items": [
+            {
+              "type": "TextBlock",
+              "horizontalAlignment": "Center",
+              "weight": "Bolder",
+              "text": "Έκθεση",
+              "isSubtle": true
+            }
+          ],
+          "width": "stretch"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Εβδομαδιαίο",
+      "data": {
+        "CardInfo": {
+          "Card": "schedule-day",
+          "Action": "Εβδομαδιαίο",
+          "ChildCards": []
+        }
+      }
+    },
+    {
+      "type": "Action.ShowCard",
+      "title": "Άλλη ημέρα",
+      "card": {
+        "type": "AdaptiveCard",
+        "style": "emphasis",
+        "body": [
+          {
+            "type": "TextBlock",
+            "weight": "Bolder",
+            "text": "Επίλεξε ημερομηνία:",
+            "isSubtle": true
+          },
+          {
+            "type": "Input.Date",
+            "id": "ScheduleDate",
+            "value": "{tomorrow}"
+          }
+        ],
+        "actions": [
+          {
+            "type": "Action.Submit",
+            "title": "Προβολή",
+            "data": {
+              "CardInfo": {
+                "Card": "schedule-day",
+                "Action": "Προβολή",
+                "ChildCards": [
+                  "Άλλη ημέρα"
+                ]
+              }
+            }
+          }
+        ],
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+      }
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0"
+}

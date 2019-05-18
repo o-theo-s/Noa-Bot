@@ -1,0 +1,47 @@
+﻿{
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "TextBlock",
+          "horizontalAlignment": "Center",
+          "size": "ExtraLarge",
+          "weight": "Bolder",
+          "text": "Ιστορικό διαγωνισμάτων"
+        },
+        {
+          "type": "TextBlock",
+          "horizontalAlignment": "Center",
+          "size": "Large",
+          "weight": "Bolder",
+          "text": "{course}"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "separator": true,
+      "size": "Large",
+      "weight": "Bolder",
+      "text": "Αποτελέσματα:",
+      "isSubtle": true
+    },
+    {
+      "type": "FactSet",
+      "facts": [
+        {
+          "title": "20/03/2019",
+          "value": "18"
+        },
+        {
+          "title": "14/10/2018",
+          "value": "12"
+        }
+      ]
+    }
+  ],
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0"
+}
